@@ -1,0 +1,36 @@
+{% extends "base.tmpl" %}
+
+{% block head %}
+  <style type="text/css">
+    table {
+      border-collapse: collapse;
+    }
+
+    tr.heading {
+      font-weight: bolder;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 0 0.5em;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <h2>{{ tableName|title }}</h2>
+  <table>
+    <tr class="heading">
+      {% for key in table.0|keys %}
+        <td>{{ key }}</td>
+      {% endfor %}
+    </tr>
+    {% for row in table %}
+      <tr>
+        {% for cell in row %}
+          <td>{{ cell|e }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

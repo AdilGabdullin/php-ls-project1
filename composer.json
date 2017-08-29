@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^5.2",
+        "google/recaptcha": "^1.1",
+        "twig/twig": "^2.4"
+    }
+}

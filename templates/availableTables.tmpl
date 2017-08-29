@@ -1,0 +1,19 @@
+{% extends "base.tmpl" %}
+
+{% block head %}
+  <style type="text/css">
+    a {
+      font-size: 30px;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <ul>
+    {% for table in list %}
+      <li>
+        <a href="/admin.php?table={{ table }}">{{ table|title }}</a><br>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
